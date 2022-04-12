@@ -1,0 +1,515 @@
+[ {
+  "id" : "images",
+  "name" : "images",
+  "display_width" : null,
+  "label" : "Images",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "images.image",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : true,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "alt" : "A group of coworkers talking in a recreational space",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/7303166/Growth/about-gallery-one.jpg"
+    }
+  },
+  {
+    "id" : "images.text",
+    "name" : "text",
+    "display_width" : null,
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "text"
+  }, {
+    "id" : "images.caption",
+    "name" : "caption",
+    "display_width" : null,
+    "label" : "Caption",
+    "help_text" : "The caption will appear underneath the image in the lightbox",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "visibility" : {
+      "controlling_field" : "gallery_options.enable_lightbox",
+      "controlling_value_regex" : "true",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "A caption that describes the image."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group"
+}, {
+  "id" : "gallery_options",
+  "name" : "gallery_options",
+  "display_width" : null,
+  "label" : "Gallery options",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "gallery_options.columns",
+    "name" : "columns",
+    "display_width" : null,
+    "label" : "Columns",
+    "required" : true,
+    "locked" : false,
+    "display" : "text",
+    "max" : 4,
+    "step" : 1,
+    "type" : "number",
+    "default" : 4
+  }, {
+    "id" : "gallery_options.fixed_image_height",
+    "name" : "fixed_image_height",
+    "display_width" : null,
+    "label" : "Fixed image height",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "gallery_options.image_height",
+    "name" : "image_height",
+    "display_width" : null,
+    "label" : "Image height",
+    "required" : true,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "gallery_options.fixed_image_height",
+      "controlling_value_regex" : "true",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "display" : "text",
+    "min" : 50,
+    "max" : 1000,
+    "step" : 5,
+    "suffix" : "px",
+    "type" : "number",
+    "default" : 250
+  }, {
+    "id" : "gallery_options.enable_lightbox",
+    "name" : "enable_lightbox",
+    "display_width" : null,
+    "label" : "Enable lightbox",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  },
+  {
+    "id" : "gallery_options.gallery_classes",
+    "type": "text",
+    "name" : "gallery_classes",
+    "display_width" : null,
+    "label" : "Gallery Classes",
+    "required" : false,
+    "locked" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.images",
+    "name" : "images",
+    "display_width" : null,
+    "label" : "Images",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.images.corner",
+      "name" : "corner",
+      "display_width" : null,
+      "label" : "Corner",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.images.corner.radius",
+        "name" : "radius",
+        "display_width" : null,
+        "label" : "Radius",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.images.alignment",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.images.alignment.alignment",
+        "name" : "alignment",
+        "display_width" : null,
+        "label" : "Alignment",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "gallery_options.fixed_image_height",
+          "controlling_value_regex" : "false",
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "alignment_direction" : "VERTICAL",
+        "type" : "alignment",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group"
+  }, {
+    "id" : "styles.lightboxes",
+    "name" : "lightboxes",
+    "display_width" : null,
+    "label" : "Lightboxes",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "gallery_options.enable_lightbox",
+      "controlling_value_regex" : "true",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "children" : [ {
+      "id" : "styles.lightboxes.close_icon",
+      "name" : "close_icon",
+      "display_width" : null,
+      "label" : "Close icon",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.lightboxes.close_icon.presets",
+        "name" : "presets",
+        "display_width" : null,
+        "label" : "Presets",
+        "help_text" : "Use presets to quickly adjust the appearance of the selected item to predefined values.",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.lightboxes.close_icon.presets.icon_color",
+          "name" : "icon_color",
+          "display_width" : null,
+          "label" : "Icon color",
+          "required" : true,
+          "locked" : false,
+          "display" : "select",
+          "choices" : [ [ "dark", "Dark" ], [ "light", "Light" ] ],
+          "type" : "choice",
+          "default" : "dark"
+        }, {
+          "id" : "styles.lightboxes.close_icon.presets.icon_size",
+          "name" : "icon_size",
+          "display_width" : null,
+          "label" : "Icon size",
+          "required" : true,
+          "locked" : false,
+          "display" : "select",
+          "choices" : [ [ "small", "Small" ], [ "regular", "Regular" ], [ "large", "Large" ] ],
+          "type" : "choice",
+          "default" : "regular"
+        }, {
+          "id" : "styles.lightboxes.close_icon.presets.icon_shape",
+          "name" : "icon_shape",
+          "display_width" : null,
+          "label" : "Icon shape",
+          "required" : true,
+          "locked" : false,
+          "display" : "select",
+          "choices" : [ [ "circle", "Circle" ], [ "square", "Square" ] ],
+          "type" : "choice",
+          "default" : "circle"
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      }, {
+        "id" : "styles.lightboxes.close_icon.fill",
+        "name" : "fill",
+        "display_width" : null,
+        "label" : "Fill",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.lightboxes.close_icon.fill.color",
+          "name" : "color",
+          "display_width" : null,
+          "label" : "Color",
+          "required" : false,
+          "locked" : false,
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_value_regex" : null,
+            "operator" : null,
+            "access" : null,
+            "hidden_subfields" : {
+              "opacity" : true
+            }
+          },
+          "type" : "color",
+          "default" : {
+            "color" : null,
+            "opacity" : null
+          }
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      }, {
+        "id" : "styles.lightboxes.close_icon.size",
+        "name" : "size",
+        "display_width" : null,
+        "label" : "Size",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.lightboxes.close_icon.size.size",
+          "name" : "size",
+          "display_width" : null,
+          "label" : "Size",
+          "required" : false,
+          "locked" : false,
+          "display" : "text",
+          "min" : 1,
+          "max" : 50,
+          "step" : 1,
+          "suffix" : "px",
+          "type" : "number"
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      }, {
+        "id" : "styles.lightboxes.close_icon.spacing",
+        "name" : "spacing",
+        "display_width" : null,
+        "label" : "Spacing",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.lightboxes.close_icon.spacing.spacing",
+          "name" : "spacing",
+          "display_width" : null,
+          "label" : "Spacing",
+          "required" : false,
+          "locked" : false,
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_value_regex" : null,
+            "operator" : null,
+            "access" : null,
+            "hidden_subfields" : {
+              "margin" : true
+            }
+          },
+          "type" : "spacing",
+          "default" : { }
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      }, {
+        "id" : "styles.lightboxes.close_icon.background",
+        "name" : "background",
+        "display_width" : null,
+        "label" : "Background",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.lightboxes.close_icon.background.color",
+          "name" : "color",
+          "display_width" : null,
+          "label" : "Color",
+          "required" : false,
+          "locked" : false,
+          "type" : "color",
+          "default" : {
+            "color" : null,
+            "opacity" : null
+          }
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      }, {
+        "id" : "styles.lightboxes.close_icon.corner",
+        "name" : "corner",
+        "display_width" : null,
+        "label" : "Corner",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.lightboxes.close_icon.corner.radius",
+          "name" : "radius",
+          "display_width" : null,
+          "label" : "Radius",
+          "required" : false,
+          "locked" : false,
+          "display" : "text",
+          "max" : 100,
+          "step" : 1,
+          "suffix" : "px",
+          "type" : "number"
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.lightboxes.text",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.lightboxes.text.font",
+        "name" : "font",
+        "display_width" : null,
+        "label" : "Font",
+        "required" : false,
+        "locked" : false,
+        "load_external_fonts" : true,
+        "type" : "font",
+        "default" : {
+          "size_unit" : "px"
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.lightboxes.background",
+      "name" : "background",
+      "display_width" : null,
+      "label" : "Background",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.lightboxes.background.color",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group"
+  }, {
+    "id" : "styles.gallery",
+    "name" : "gallery",
+    "display_width" : null,
+    "label" : "Gallery",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.gallery.spacing",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.gallery.spacing.space_between_images",
+        "name" : "space_between_images",
+        "display_width" : null,
+        "label" : "Space between images",
+        "required" : false,
+        "locked" : false,
+        "display" : "slider",
+        "min" : 0,
+        "max" : 50,
+        "step" : 5,
+        "suffix" : "px",
+        "type" : "number"
+      }, {
+        "id" : "styles.gallery.spacing.spacing",
+        "name" : "spacing",
+        "display_width" : null,
+        "label" : "Spacing",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_value_regex" : null,
+          "operator" : null,
+          "access" : null,
+          "hidden_subfields" : {
+            "padding" : true
+          }
+        },
+        "type" : "spacing",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group"
+} ]

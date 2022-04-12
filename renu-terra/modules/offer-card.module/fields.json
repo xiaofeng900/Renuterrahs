@@ -1,0 +1,833 @@
+[ {
+  "id" : "icon",
+  "name" : "icon",
+  "display_width" : null,
+  "label" : "Icon",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "icon.icon",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : true,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "default" : {
+      "name" : "hubspot",
+      "type" : "SOLID",
+      "unicode" : "f3b2"
+    }
+  }, {
+    "id" : "icon.accessibility_options",
+    "name" : "accessibility_options",
+    "display_width" : null,
+    "label" : "Accessibility options",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "icon.accessibility_options.purpose",
+      "name" : "purpose",
+      "display_width" : null,
+      "label" : "Purpose",
+      "help_text" : "Categorize the purpose of this icon for screen readers. <a href='https://www.w3.org/WAI/tutorials/images/' target='blank' rel='noopener noreferrer'>Learn More</a>",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "decorative", "Ignored by screen reader" ], [ "semantic", "Read by screen reader" ] ],
+      "type" : "choice",
+      "default" : "decorative"
+    }, {
+      "id" : "icon.accessibility_options.title",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "help_text" : "This text will be read by screen readers to describe the icon.",
+      "required" : true,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "icon.accessibility_options.purpose",
+        "controlling_value_regex" : "semantic",
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group"
+}, {
+  "id" : "content",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.content",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : true,
+    "locked" : false,
+    "enabled_features" : [ "image", "emoji", "lists", "font_size", "standard_emphasis", "block", "font_family", "alignment", "advanced_emphasis" ],
+    "type" : "richtext",
+    "default" : "<h3>Drive people to your products and services</h3><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempor arcu non commodo elementum.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group"
+}, {
+  "id" : "button",
+  "name" : "button",
+  "display_width" : null,
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "button.button_text",
+    "name" : "button_text",
+    "display_width" : null,
+    "label" : "Button text",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Learn more"
+  }, {
+    "id" : "button.button_link",
+    "name" : "button_link",
+    "display_width" : null,
+    "label" : "Button link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    }
+  }, {
+    "id" : "button.add_icon",
+    "name" : "add_icon",
+    "display_width" : null,
+    "label" : "Add icon",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "button.icon",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "button.add_icon",
+      "controlling_value_regex" : "true",
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "children" : [ {
+      "id" : "button.icon.icon",
+      "name" : "icon",
+      "display_width" : null,
+      "label" : "Icon",
+      "required" : true,
+      "locked" : false,
+      "icon_set" : "fontawesome-5.0.10",
+      "type" : "icon",
+      "default" : {
+        "name" : "hubspot",
+        "type" : "SOLID",
+        "unicode" : "f3b2"
+      }
+    }, {
+      "id" : "button.icon.position",
+      "name" : "position",
+      "display_width" : null,
+      "label" : "Position",
+      "required" : true,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "type" : "choice",
+      "default" : "left"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : true,
+    "type" : "group"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "display_width" : null,
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.icon",
+    "name" : "icon",
+    "display_width" : null,
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.icon.presets",
+      "name" : "presets",
+      "display_width" : null,
+      "label" : "Presets",
+      "help_text" : "Use presets to quickly adjust the appearance of the selected item to predefined values.",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.icon.presets.icon_color",
+        "name" : "icon_color",
+        "display_width" : null,
+        "label" : "Icon color",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "dark", "Dark" ], [ "light", "Light" ] ],
+        "type" : "choice",
+        "default" : "dark"
+      }, {
+        "id" : "styles.icon.presets.icon_size",
+        "name" : "icon_size",
+        "display_width" : null,
+        "label" : "Icon size",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "small", "Small" ], [ "regular", "Regular" ], [ "large", "Large" ] ],
+        "type" : "choice",
+        "default" : "regular"
+      }, {
+        "id" : "styles.icon.presets.icon_shape",
+        "name" : "icon_shape",
+        "display_width" : null,
+        "label" : "Icon shape",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "circle", "Circle" ], [ "square", "Square" ] ],
+        "type" : "choice",
+        "default" : "circle"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.icon.fill",
+      "name" : "fill",
+      "display_width" : null,
+      "label" : "Fill",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.icon.fill.color",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_value_regex" : null,
+          "operator" : null,
+          "access" : null,
+          "hidden_subfields" : {
+            "opacity" : true
+          }
+        },
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.icon.size",
+      "name" : "size",
+      "display_width" : null,
+      "label" : "Size",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.icon.size.size",
+        "name" : "size",
+        "display_width" : null,
+        "label" : "",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "min" : 1,
+        "max" : 50,
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.icon.background",
+      "name" : "background",
+      "display_width" : null,
+      "label" : "Background",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.icon.background.color",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.icon.corner",
+      "name" : "corner",
+      "display_width" : null,
+      "label" : "Corner",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.icon.corner.radius",
+        "name" : "radius",
+        "display_width" : null,
+        "label" : "Radius",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.icon.spacing",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.icon.spacing.spacing",
+        "name" : "spacing",
+        "display_width" : null,
+        "label" : "Spacing",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_value_regex" : null,
+          "operator" : null,
+          "access" : null,
+          "hidden_subfields" : {
+            "margin" : true
+          }
+        },
+        "type" : "spacing",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.icon.alignment",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.icon.alignment.alignment",
+        "name" : "alignment",
+        "display_width" : null,
+        "label" : "Alignment",
+        "required" : false,
+        "locked" : false,
+        "alignment_direction" : "HORIZONTAL",
+        "type" : "alignment",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group"
+  }, {
+    "id" : "styles.button",
+    "name" : "button",
+    "display_width" : null,
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.button.presets",
+      "name" : "presets",
+      "display_width" : null,
+      "label" : "Presets",
+      "help_text" : "Use presets to quickly adjust the appearance of the selected item to predefined values.",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.button.presets.button_style",
+        "name" : "button_style",
+        "display_width" : null,
+        "label" : "Button style",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "primary", "Primary" ], [ "secondary", "Secondary" ], [ "simple", "Simple" ] ],
+        "type" : "choice",
+        "default" : "primary"
+      }, {
+        "id" : "styles.button.presets.button_size",
+        "name" : "button_size",
+        "display_width" : null,
+        "label" : "Button size",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "small", "Small" ], [ "regular", "Regular" ], [ "large", "Large" ] ],
+        "type" : "choice",
+        "default" : "regular"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.button.text",
+      "name" : "text",
+      "display_width" : null,
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.button.text.font",
+        "name" : "font",
+        "display_width" : null,
+        "label" : "Font",
+        "required" : false,
+        "locked" : false,
+        "load_external_fonts" : true,
+        "type" : "font",
+        "default" : {
+          "size_unit" : "px"
+        }
+      }, {
+        "id" : "styles.button.text.transform",
+        "name" : "transform",
+        "display_width" : null,
+        "label" : "Transform",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "none", "None" ], [ "capitalize", "Capitalize" ], [ "uppercase", "Uppercase" ], [ "lowercase", "Lowercase" ] ],
+        "type" : "choice"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.button.background",
+      "name" : "background",
+      "display_width" : null,
+      "label" : "Background",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.button.background.color",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.button.border",
+      "name" : "border",
+      "display_width" : null,
+      "label" : "Border",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.button.border.border",
+        "name" : "border",
+        "display_width" : null,
+        "label" : "Border",
+        "required" : false,
+        "locked" : false,
+        "allow_custom_border_sides" : false,
+        "type" : "border",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.button.corner",
+      "name" : "corner",
+      "display_width" : null,
+      "label" : "Corner",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.button.corner.radius",
+        "name" : "radius",
+        "display_width" : null,
+        "label" : "Radius",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.button.spacing",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.button.spacing.spacing",
+        "name" : "spacing",
+        "display_width" : null,
+        "label" : "Spacing",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_value_regex" : null,
+          "operator" : null,
+          "access" : null,
+          "hidden_subfields" : {
+            "margin" : true
+          }
+        },
+        "type" : "spacing",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.button.hover",
+      "name" : "hover",
+      "display_width" : null,
+      "label" : "Hover",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.button.hover.text",
+        "name" : "text",
+        "display_width" : null,
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.button.hover.text.font",
+          "name" : "font",
+          "display_width" : null,
+          "label" : "Font",
+          "required" : false,
+          "locked" : false,
+          "visibility" : {
+            "controlling_field" : null,
+            "controlling_value_regex" : null,
+            "operator" : null,
+            "access" : null,
+            "hidden_subfields" : {
+              "size" : true
+            }
+          },
+          "load_external_fonts" : true,
+          "type" : "font",
+          "default" : {
+            "font" : null,
+            "font_set" : "DEFAULT",
+            "styles" : null,
+            "size" : null,
+            "size_unit" : null,
+            "color" : null,
+            "variant" : null,
+            "fallback" : null,
+            "style" : null
+          }
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      }, {
+        "id" : "styles.button.hover.background",
+        "name" : "background",
+        "display_width" : null,
+        "label" : "Background",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.button.hover.background.color",
+          "name" : "color",
+          "display_width" : null,
+          "label" : "Color",
+          "required" : false,
+          "locked" : false,
+          "type" : "color",
+          "default" : {
+            "color" : null,
+            "opacity" : null
+          }
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      }, {
+        "id" : "styles.button.hover.border",
+        "name" : "border",
+        "display_width" : null,
+        "label" : "Border",
+        "required" : false,
+        "locked" : false,
+        "children" : [ {
+          "id" : "styles.button.hover.border.border",
+          "name" : "border",
+          "display_width" : null,
+          "label" : "Border",
+          "required" : false,
+          "locked" : false,
+          "allow_custom_border_sides" : false,
+          "type" : "border",
+          "default" : { }
+        } ],
+        "tab" : "STYLE",
+        "expanded" : false,
+        "type" : "group"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.button.alignment",
+      "name" : "alignment",
+      "display_width" : null,
+      "label" : "Alignment",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.button.alignment.alignment",
+        "name" : "alignment",
+        "display_width" : null,
+        "label" : "Alignment",
+        "required" : false,
+        "locked" : false,
+        "alignment_direction" : "HORIZONTAL",
+        "type" : "alignment",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group"
+  }, {
+    "id" : "styles.card",
+    "name" : "card",
+    "display_width" : null,
+    "label" : "Card",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "styles.card.presets",
+      "name" : "presets",
+      "display_width" : null,
+      "label" : "Presets",
+      "help_text" : "Use presets to quickly adjust the appearance of the selected item to predefined values.",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.card.presets.card_style",
+        "name" : "card_style",
+        "display_width" : null,
+        "label" : "Card style",
+        "required" : true,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "dark", "Dark" ], [ "light", "Light" ], [ "plain", "Plain" ] ],
+        "type" : "choice",
+        "default" : "light"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.card.background",
+      "name" : "background",
+      "display_width" : null,
+      "label" : "Background",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.card.background.color",
+        "name" : "color",
+        "display_width" : null,
+        "label" : "Color",
+        "required" : false,
+        "locked" : false,
+        "type" : "color",
+        "default" : {
+          "color" : null,
+          "opacity" : null
+        }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.card.border",
+      "name" : "border",
+      "display_width" : null,
+      "label" : "Border",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.card.border.border",
+        "name" : "border",
+        "display_width" : null,
+        "label" : "Border",
+        "required" : false,
+        "locked" : false,
+        "allow_custom_border_sides" : false,
+        "type" : "border",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.card.corner",
+      "name" : "corner",
+      "display_width" : null,
+      "label" : "Corner",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.card.corner.radius",
+        "name" : "radius",
+        "display_width" : null,
+        "label" : "Radius",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "max" : 100,
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.card.height",
+      "name" : "height",
+      "display_width" : null,
+      "label" : "Height",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.card.height.min_height",
+        "name" : "min_height",
+        "display_width" : null,
+        "label" : "Minimum height",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "suffix" : "px",
+        "type" : "number"
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    }, {
+      "id" : "styles.card.spacing",
+      "name" : "spacing",
+      "display_width" : null,
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "styles.card.spacing.spacing",
+        "name" : "spacing",
+        "display_width" : null,
+        "label" : "Spacing",
+        "required" : false,
+        "locked" : false,
+        "type" : "spacing",
+        "default" : { }
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "type" : "group"
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "type" : "group"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group"
+} ]

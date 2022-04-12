@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "master_language" : "en",
+  "icon" : "../../../mV0_hubspot/growth/images/module-icons/social-posts.svg",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 70546246969,
+  "label" : "Social follow",
+  "is_available_for_new_content" : true
+}

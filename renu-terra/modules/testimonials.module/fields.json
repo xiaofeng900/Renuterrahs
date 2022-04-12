@@ -1,0 +1,90 @@
+[
+  {
+    "id" : "section-title",
+    "name" : "sectiontitle",
+    "display_width" : null,
+    "label" : "Section Title",
+    "required" : false,
+    "locked" : false,
+    "tab" : "CONTENT",
+    "expanded" : true,
+    "type" : "text"
+  },
+  {
+    "id" : "title",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "tab" : "CONTENT",
+    "expanded" : true,
+    "type" : "text"
+  },
+  {
+    "id" : "testimonials",
+    "name" : "testimonials",
+    "label" : "Testimonials",
+    "type": "group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : "testimonials.company",
+      "default" : null
+    },
+    "children" : [
+      {
+        "id" : "testimonial.company",
+        "name" : "company",
+        "display_width" : null,
+        "label" : "Company",
+        "required" : false,
+        "locked" : false,
+        "tab" : "CONTENT",
+        "expanded" : true,
+        "type" : "text"
+      },
+      {
+        "id" : "testimonial.image",
+        "name" : "image",
+        "display_width" : null,
+        "label" : "Image",
+        "required" : true,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : true,
+        "type" : "image",
+        "default" : {
+          "alt" : "A photo of Shaun Benson, Marketing Manager, Agriflora Inc.",
+          "loading" : "lazy",
+          "size_type" : "auto",
+          "src" : "https://f.hubspotusercontent10.net/hubfs/7303166/Growth/testimonial.jpg"
+        }
+      },
+      {
+        "id" : "testimonial.quote_text",
+        "name" : "quote_text",
+        "display_width" : null,
+        "label" : "Quote text",
+        "required" : true,
+        "locked" : false,
+        "enabled_features" : [ "font_size", "standard_emphasis", "block", "font_family", "alignment" ],
+        "type" : "richtext",
+        "default" : "<span>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan velit sit amet sagittis malesuada.\"</span>"
+      },
+      {
+        "id" : "testimonial.author",
+        "name" : "author",
+        "display_width" : null,
+        "label" : "Author",
+        "required" : false,
+        "locked" : false,
+        "expanded" : true,
+        "type" : "text"
+      }
+    ]
+  }
+]

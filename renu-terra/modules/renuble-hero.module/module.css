@@ -1,0 +1,23 @@
+/* Hero */
+
+.renuble-hero-banner {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Hero title and content */
+
+.renuble-hero-banner .hero-content {
+  text-align: center;
+  background-color: white;
+  width: 40%;
+  min-width: 320px;
+  max-width: 625px;
+  padding: 2rem 2.5rem;
+  border-radius: 11px;
+}
+
+.renuble-hero-banner .hero-content h2 {
+  color: #33856B;
+  text-transform: uppercase;
+}

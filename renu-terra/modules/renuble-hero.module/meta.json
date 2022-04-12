@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "master_language" : "en",
+  "icon" : "../../../mV0_hubspot/growth/images/module-icons/down.svg",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 705461294199,
+  "label" : "Hero",
+  "is_available_for_new_content" : true
+}

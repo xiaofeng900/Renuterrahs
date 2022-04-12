@@ -1,0 +1,15 @@
+{# Renuble Hero #}
+
+<section class="renuble-hero-banner">
+  {% if module.hero_header %}
+    <div class="hero-content">
+      {% if module.hero_header %}
+        <h2 class="teal">{{ module.hero_header }}</h2>
+      {% endif %}
+      {% if module.hero_text %}
+        <div class="divider bg-teal"></div>
+        <div>{{ module.hero_text }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+</section>

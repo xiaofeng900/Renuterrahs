@@ -1,0 +1,16 @@
+[
+  {
+    "name": "hero_header",
+    "label": "Header",
+    "required": false,
+    "type": "text",
+    "default": "Renu Terra™ Is the new Peat"
+  },
+  {
+    "name": "hero_text",
+    "label": "Hero Text",
+    "required": false,
+    "type": "richtext",
+    "default": "<p>Did you know that harvesting peat moss and Rockwool releases harmful carbon monoxide? This is destroying our eco-system and reaking havoc on our air quality.</p> <p>The solution? Renu Terra™ offers the same benefits lorem ipsum, etc.</p>"
+  }
+]

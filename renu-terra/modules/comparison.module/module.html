@@ -1,0 +1,48 @@
+{# Comparison Slides #}
+<div class="renuble-comparison-container">
+  {% if module.title || module.sectiontitle %}
+    <div class="renuble-comparison__header text-center">
+      {% if module.sectiontitle %}
+        <p class="h3 uppercase teal section-title"><b>{{ module.sectiontitle }}</b></p>
+      {% endif %}
+      {% if module.title %}
+        <h2 class="uppercase teal">{{ module.title }}</h2>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="renuble-comparison-wrappper">
+    <div class="renuble-comparison">
+      {% for slide in module.slides %}
+      	<div class="renuble-comparison-slide">
+      		<div class="renuble-comparison__image">
+            {% if slide.image.src %}
+
+              {# Sets slide image size attributes #}
+
+              {% set sizeAttrs = 'width="{{ slide.image.width }}" height="{{ slide.image.height }}"' %}
+              {% if slide.image.size_type == "auto" %}
+                {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+              {% elif slide.image.size_type == "auto_custom_max" %}
+                {% set sizeAttrs = 'width="{{ slide.image.max_width }}" height="{{ slide.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+
+              {# Sets slide author image loading attribute #}
+
+              {% set loadingAttr = slide.image.loading != "disabled" ? 'loading="{{ slide.image.loading }}"' : "" %}
+
+              <img class="" src="{{ slide.image.src }}" alt="{{ slide.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+            {% endif %}
+        	</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="renuble-comparison-progress-bar">
+      {% for slide in module.slides %}
+        <div class="renuble-progress-slide">
+          <div data-day="{{ slide.day }}">{{ slide.day }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
