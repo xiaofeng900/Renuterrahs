@@ -847,14 +847,16 @@ table {
 
 th,
 td {
+  
   border: 1px solid rgba(0,0,0,.1);
   {{ table_spacing }}
   color: {{ table_body_font_color }};
 }
 
-table tbody tr:first-of-type, table tbody tr td:first-of-type {
+table tbody tr:first-of-type td, table tbody tr td:first-of-type {
   background-color: #33856B;
   color: white;
+  border-left: none !important;
 }
 
 table tbody tr td:first-of-type {
@@ -1373,4 +1375,72 @@ tfoot td {
 .tabs__tab:active {
   border-color: {{ body_font.color }};
   color: {{ body_font.color }};
+}
+
+/* Table Style Customization */
+
+div[data-hs-responsive-table=true] {
+  /* overflow: unset; */
+  filter: drop-shadow(4px 7px 34px rgba(0, 0, 0, 0.25));
+  /* box-shadow: 4px 7px 34px rgba(0, 0, 0, 0.25); */
+}
+
+table {
+  background-color: #33856B;
+}
+
+table tbody tr:first-of-type td:last-child{
+  border-bottom-right-radius: 10px;
+}
+
+table tbody tr:last-of-type td:first-child{
+  border-bottom-right-radius: 10px;
+}
+
+/* table tbody tr:nth-child(2) {
+  background-color: #33856B;
+} */
+
+table tbody tr:nth-child(n + 2) > td:nth-child(n + 2) {
+  background-color: #FFF;
+}
+
+table tbody tr:nth-child(2) > td:nth-child(2) {
+  border-top-left-radius: 10px;
+}
+
+
+table tbody tr:nth-child(1) > td{
+  border-top: none;
+  border-bottom: none;
+}
+
+table tbody tr:nth-child(2) > td {
+  border-top: none;
+}
+
+table tbody tr:nth-child( n + 2) > td:last-child {
+  border-right-color: #E8E8E8;
+}
+
+table tbody tr:last-child > td:nth-child( n + 2) {
+  border-bottom-color: #e8e8e8;
+}
+
+
+@media (max-width: 767px) {
+  table {
+    min-width: 700px;
+  }
+  table tbody > tr:first-child td {
+    position: sticky;
+  }
+  table tbody tr:nth-child( n + 2) > td:first-child {
+    border-bottom-color: #2d7961;
+  }
+  table tbody  > tr > td:first-child {
+    position: sticky;
+    z-index: 100;
+    left: 0px;
+  }
 }
